@@ -108,7 +108,7 @@ public class DiscordPlugin extends Plugin
 	@Inject
 	private OkHttpClient okHttpClient;
 
-	private Map<Skill, Integer> skillExp = new HashMap<>();
+	private final Map<Skill, Integer> skillExp = new HashMap<>();
 	private NavigationButton discordButton;
 	private boolean loginFlag;
 
@@ -131,6 +131,7 @@ public class DiscordPlugin extends Plugin
 			.build();
 
 		clientToolbar.addNavigation(discordButton);
+		resetState();
 		checkForGameStateUpdate();
 		checkForAreaUpdate();
 
@@ -146,7 +147,7 @@ public class DiscordPlugin extends Plugin
 	protected void shutDown() throws Exception
 	{
 		clientToolbar.removeNavigation(discordButton);
-		discordState.reset();
+		resetState();
 		partyService.changeParty(null);
 		wsClient.unregisterMessage(DiscordUserInfo.class);
 	}
@@ -157,6 +158,7 @@ public class DiscordPlugin extends Plugin
 		switch (event.getGameState())
 		{
 			case LOGIN_SCREEN:
+				resetState();
 				checkForGameStateUpdate();
 				return;
 			case LOGGING_IN:
@@ -166,9 +168,9 @@ public class DiscordPlugin extends Plugin
 				if (loginFlag)
 				{
 					loginFlag = false;
+					resetState();
 					checkForGameStateUpdate();
 				}
-
 				break;
 		}
 
@@ -180,6 +182,7 @@ public class DiscordPlugin extends Plugin
 	{
 		if (event.getGroup().equalsIgnoreCase("discord"))
 		{
+			resetState();
 			checkForGameStateUpdate();
 			checkForAreaUpdate();
 		}
@@ -364,10 +367,13 @@ public class DiscordPlugin extends Plugin
 		discordState.refresh();
 	}
 
+	private void resetState()
+	{
+		discordState.reset();
+	}
+
 	private void checkForGameStateUpdate()
 	{
-		// Game state update does also full reset of discord state
-		discordState.reset();
 		discordState.triggerEvent(client.getGameState() == GameState.LOGGED_IN
 			? DiscordGameEventType.IN_GAME
 			: DiscordGameEventType.IN_MENU);

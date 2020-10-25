@@ -24,33 +24,52 @@
  */
 package net.runelite.client.plugins.discord;
 
+import lombok.AllArgsConstructor;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.Units;
 
 @ConfigGroup("discord")
+public interface DiscordConfig extends Config
+{
+	@AllArgsConstructor
+	enum ElapsedTimeType
+	{
+		TOTAL("Total elapsed time"),
+		ACTIVITY("Per activity"),
+		HIDDEN("Hide elapsed time");
 
-public interface DiscordConfig extends Config {
-    @ConfigItem(
-            keyName = "actionTimeout",
-            name = "Action timeout (minutes)",
-            description = "Configures after how long of not updating status will be reset (in minutes)",
-            position = 1
-    )
-    default int actionTimeout() {
-        return 5;
-    }
+		private final String value;
+
+		@Override
+		public String toString()
+		{
+			return value;
+		}
+	}
 
 	@ConfigItem(
-			keyName = "hideElapsedTime",
-			name = "Hide elapsed time",
-			description = "Configures if the elapsed time of your activity should be hidden.",
-			position = 2
+		keyName = "elapsedTime",
+		name = "Elapsed Time",
+		description = "Configures elapsed time shown.",
+		position = 1
 	)
-	default boolean hideElapsedTime()
+	default ElapsedTimeType elapsedTimeType()
 	{
-		return false;
+		return ElapsedTimeType.ACTIVITY;
+	}
+
+	@ConfigItem(
+		keyName = "actionTimeout",
+		name = "Activity timeout",
+		description = "Configures after how long of not updating activity will be reset (in minutes)",
+		position = 2
+	)
+	@Units(Units.MINUTES)
+	default int actionTimeout()
+	{
+		return 5;
 	}
 
 	@ConfigItem(

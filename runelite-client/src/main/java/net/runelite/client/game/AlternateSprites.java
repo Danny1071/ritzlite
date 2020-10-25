@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Jos <Malevolentdev@gmail.com>
+ * Copyright (c) 2020 Jordan <nightfirecat@protonmail.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,28 +22,11 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.statusbars;
+package net.runelite.client.game;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import net.runelite.api.Point;
-import net.runelite.api.widgets.WidgetInfo;
-
-@Getter
-@AllArgsConstructor
-enum Viewport
+public class AlternateSprites
 {
-	RESIZED_BOX(WidgetInfo.RESIZABLE_VIEWPORT_OLD_SCHOOL_BOX, WidgetInfo.RESIZABLE_VIEWPORT_INTERFACE_CONTAINER,
-			new Point(20, -4), new Point(0, -4)),
-	RESIZED_BOTTOM(WidgetInfo.RESIZABLE_VIEWPORT_BOTTOM_LINE, WidgetInfo.RESIZABLE_VIEWPORT_BOTTOM_LINE_INTERFACE_CONTAINER,
-			new Point(61, 8), new Point(35, -12)),
-	FIXED(WidgetInfo.FIXED_VIEWPORT, WidgetInfo.FIXED_VIEWPORT_INTERFACE_CONTAINER,
-			new Point(20, -4), new Point(0, -4)),
-	FIXED_BANK(WidgetInfo.BANK_CONTAINER, WidgetInfo.BANK_INVENTORY_ITEMS_CONTAINER,
-			new Point(20, -4), new Point(0, -4));
-
-	private WidgetInfo container;
-	private WidgetInfo viewport;
-	private Point offsetLeft;
-	private Point offsetRight;
+	public static final String DISEASE_HEART = "1067-DISEASE.png";
+	public static final String POISON_HEART = "1067-POISON.png";
+	public static final String VENOM_HEART = "1067-VENOM.png";
 }

@@ -31,6 +31,8 @@ import net.runelite.client.config.ConfigItem;
 @ConfigGroup("defaultworld")
 public interface DefaultWorldConfig extends Config
 {
+	String GROUP = "defaultworld";
+
 	@ConfigItem(
 		keyName = "defaultWorld",
 		name = "Default world",

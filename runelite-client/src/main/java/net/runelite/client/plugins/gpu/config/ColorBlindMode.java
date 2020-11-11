@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Adam <Adam@sigterm.info>
+ * Copyright (c) 2020 Ben Poulson <https://github.com/benpoulson>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,36 +22,12 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.util;
+package net.runelite.client.plugins.gpu.config;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-public class WildcardMatcher
+public enum ColorBlindMode
 {
-	private static final Pattern WILDCARD_PATTERN = Pattern.compile("(?i)[^*]+|(\\*)");
-
-	public static boolean matches(String pattern, String text)
-	{
-		final Matcher matcher = WILDCARD_PATTERN.matcher(pattern);
-		final StringBuffer buffer = new StringBuffer();
-
-		buffer.append("(?i)");
-		while (matcher.find())
-		{
-			if (matcher.group(1) != null)
-			{
-				matcher.appendReplacement(buffer, ".*");
-			}
-			else
-			{
-				matcher.appendReplacement(buffer, Matcher.quoteReplacement(Pattern.quote(matcher.group(0))));
-			}
-		}
-
-		matcher.appendTail(buffer);
-		final String replaced = buffer.toString();
-
-		return text.matches(replaced);
-	}
+	NONE,
+	PROTANOPE,
+	DEUTERANOPE,
+	TRITANOPE;
 }

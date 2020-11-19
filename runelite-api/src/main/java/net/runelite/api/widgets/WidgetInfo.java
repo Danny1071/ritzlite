@@ -560,6 +560,8 @@ public enum WidgetInfo
 
 	HEALTH_OVERLAY_BAR(WidgetID.HEALTH_OVERLAY_BAR_GROUP_ID, WidgetID.EncounterHealthBar.CONTAINER),
 
+	TRAILBLAZER_AREA_TELEPORT(WidgetID.TRAILBLAZER_AREAS_GROUP_ID, WidgetID.TrailblazerAreas.TELEPORT),
+
 	CAMERA_OVERLAYS(548, 14),
 	DUNGEON_DARKNESS_1(96, 0),
 	DUNGEON_DARKNESS_2(97, 0),
@@ -567,6 +569,7 @@ public enum WidgetInfo
 	SNOW_SCREEN_OVERLAY(167, 0),
 	SMOKE_SCREEN_OVERLAY(313, 0),
 	ZAMORAK_DARKNESS_OVERLAY(406, 2);
+	;
 
 	private final int groupId;
 	private final int childId;

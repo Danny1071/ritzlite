@@ -453,6 +453,5 @@ public class InventorySetupPluginPanel extends PluginPanel
 		title.setText(MAIN_TITLE);
 		currentSelectedSetup = null;
 		searchBar.setVisible(true);
-		plugin.resetBankSearch();
 	}
 }

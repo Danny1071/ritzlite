@@ -69,7 +69,6 @@ import net.runelite.client.game.chatbox.ChatboxTextInput;
 import net.runelite.client.input.KeyManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
-import net.runelite.client.plugins.banktags.tabs.BankSearch;
 import net.runelite.client.plugins.inventorysetups.ui.InventorySetupPluginPanel;
 import net.runelite.client.plugins.inventorysetups.ui.InventorySetupSlot;
 import net.runelite.client.plugins.runepouch.Runes;
@@ -121,8 +120,6 @@ public class InventorySetupPlugin extends Plugin
 	@Getter
 	private ArrayList<InventorySetup> inventorySetups;
 	private NavigationButton navButton;
-	@Inject
-	private BankSearch bankSearch;
 	@Inject
 	private KeyManager keyManager;
 	@Inject
@@ -206,13 +203,6 @@ public class InventorySetupPlugin extends Plugin
 		});
 	}
 
-	@Override
-	public void shutDown()
-	{
-		clientToolbar.removeNavigation(navButton);
-		bankSearch.reset(true);
-	}
-
 	public void addInventorySetup()
 	{
 		final String name = JOptionPane.showInputDialog(panel,
@@ -285,11 +275,6 @@ public class InventorySetupPlugin extends Plugin
 				doBankSearch();
 			}
 		});
-	}
-
-	public void resetBankSearch()
-	{
-		bankSearch.reset(true);
 	}
 
 	public ArrayList<InventorySetupItem> getRunePouchData()

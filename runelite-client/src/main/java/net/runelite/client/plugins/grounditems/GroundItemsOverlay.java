@@ -113,7 +113,7 @@ public class GroundItemsOverlay extends Overlay
 		final FontMetrics fm = graphics.getFontMetrics();
 		final Player player = client.getLocalPlayer();
 
-		if (player == null || client.getViewportWidget() == null)
+		if (player == null)
 		{
 			return null;
 		}

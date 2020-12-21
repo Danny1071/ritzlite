@@ -25,7 +25,7 @@
 package net.runelite.client.plugins.herbiboars;
 
 import java.awt.Color;
-
+import net.runelite.client.config.Alpha;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
@@ -52,15 +52,17 @@ public interface HerbiboarConfig extends Config {
         return false;
     }
 
-    @ConfigItem(
-            position = 2,
-            keyName = "colorStart",
-            name = "Start Color",
-            description = "Color for rocks that start the trails"
-    )
-    default Color getStartColor() {
-        return Color.CYAN;
-    }
+	@Alpha
+	@ConfigItem(
+		position = 2,
+		keyName = "colorStart",
+		name = "Start Color",
+		description = "Color for rocks that start the trails"
+	)
+	default Color getStartColor()
+	{
+		return Color.CYAN;
+	}
 
     @ConfigItem(
             position = 3,
@@ -72,15 +74,17 @@ public interface HerbiboarConfig extends Config {
         return true;
     }
 
-    @ConfigItem(
-            position = 4,
-            keyName = "colorTunnel",
-            name = "Tunnel Color",
-            description = "Color for tunnels with herbiboars"
-    )
-    default Color getTunnelColor() {
-        return Color.GREEN;
-    }
+	@Alpha
+	@ConfigItem(
+		position = 4,
+		keyName = "colorTunnel",
+		name = "Tunnel Color",
+		description = "Color for tunnels with herbiboars"
+	)
+	default Color getTunnelColor()
+	{
+		return Color.GREEN;
+	}
 
     @ConfigItem(
             position = 5,
@@ -92,15 +96,17 @@ public interface HerbiboarConfig extends Config {
         return true;
     }
 
-    @ConfigItem(
-            position = 6,
-            keyName = "colorGameObject",
-            name = "Trail Object Color",
-            description = "Color for mushrooms, mud, seaweed, etc"
-    )
-    default Color getObjectColor() {
-        return Color.CYAN;
-    }
+	@Alpha
+	@ConfigItem(
+		position = 6,
+		keyName = "colorGameObject",
+		name = "Trail Object Color",
+		description = "Color for mushrooms, mud, seaweed, etc"
+	)
+	default Color getObjectColor()
+	{
+		return Color.CYAN;
+	}
 
     @ConfigItem(
             position = 7,
@@ -112,13 +118,15 @@ public interface HerbiboarConfig extends Config {
         return true;
     }
 
-    @ConfigItem(
-            position = 8,
-            keyName = "colorTrail",
-            name = "Trail Color",
-            description = "Color for mushrooms, mud, seaweed, etc"
-    )
-    default Color getTrailColor() {
-        return Color.WHITE;
-    }
+	@Alpha
+	@ConfigItem(
+		position = 8,
+		keyName = "colorTrail",
+		name = "Trail Color",
+		description = "Color for mushrooms, mud, seaweed, etc"
+	)
+	default Color getTrailColor()
+	{
+		return Color.WHITE;
+	}
 }

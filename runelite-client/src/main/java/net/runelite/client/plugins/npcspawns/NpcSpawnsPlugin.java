@@ -32,7 +32,8 @@ import net.runelite.client.util.ImageUtil;
 import static net.runelite.client.RuneLite.RUNELITE_DIR;
 
 @PluginDescriptor(
-    name = "Npc Spawns"
+    name = "Npc Spawns",
+    enabledByDefault = false
 )
 @Slf4j
 public class NpcSpawnsPlugin extends Plugin

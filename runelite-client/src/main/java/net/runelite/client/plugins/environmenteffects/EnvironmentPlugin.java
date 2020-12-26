@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 
 import net.runelite.api.*;
 import net.runelite.api.events.ItemContainerChanged;
+import net.runelite.api.events.WidgetHiddenChanged;
 import net.runelite.api.kit.KitType;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.game.ItemManager;
@@ -19,7 +20,6 @@ import com.google.common.collect.ImmutableSet;
 
 import net.runelite.api.coords.*;
 import net.runelite.api.events.GameTick;
-import net.runelite.api.events.WidgetHiddenChanged;
 import net.runelite.api.widgets.Widget;
 import net.runelite.api.ItemComposition;
 import net.runelite.client.plugins.Plugin;

@@ -17,7 +17,7 @@ public class CoxOverlay extends Overlay {
     @Inject
     public CoxOverlay(CoxPlugin plugin, Client client, CoxConfig config) {
         setPosition(OverlayPosition.DYNAMIC);
-        setLayer(OverlayLayer.ABOVE_MAP);
+        setLayer(OverlayLayer.ABOVE_WIDGETS);
         setPriority(OverlayPriority.HIGH);
         this.plugin = plugin;
         this.client = client;

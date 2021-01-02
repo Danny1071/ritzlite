@@ -162,6 +162,13 @@ public class EasySwapPlugin extends Plugin {
         }
 
         /*
+         *Easy drops blisterwood logs
+         */
+        if (target.equalsIgnoreCase(("Blisterwood logs")) && config.swapEasyDropBlisterwood()) {
+            swapper.markForSwap("Drop", option, target);
+        }
+
+        /*
          * Easy drops redwoods
          */
         if (target.equalsIgnoreCase(("Redwood logs")) && config.swapEasyDropRedwoods()) {

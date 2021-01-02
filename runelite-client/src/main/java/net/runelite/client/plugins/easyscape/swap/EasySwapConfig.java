@@ -10,6 +10,14 @@ import net.runelite.client.plugins.easyscape.util.GloryMode;
 
 @ConfigGroup("easyswap")
 public interface EasySwapConfig extends Config {
+    @ConfigItem(
+            keyName = "swapEasyDropBlisterwood",
+            name = "Blisterwood logs easy drop",
+            description = "Enables drop as the first option on the menu"
+    )
+    default boolean swapEasyDropBlisterwood() {
+        return false;
+    }
 
     @ConfigItem(
             keyName = "swapEasyDropRedwoods",

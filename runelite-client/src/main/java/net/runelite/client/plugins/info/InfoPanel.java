@@ -106,6 +106,10 @@ public class InfoPanel extends PluginPanel {
     @Inject
     private ConfigManager configManager;
 
+    @Inject
+    @Named("runelite.wiki.link")
+    private String wikiLink;
+
     static {
         ARROW_RIGHT_ICON = new ImageIcon(ImageUtil.getResourceStreamFromClass(InfoPanel.class, "/util/arrow_right.png"));
         GITHUB_ICON = new ImageIcon(ImageUtil.getResourceStreamFromClass(InfoPanel.class, "github_icon.png"));
@@ -189,7 +193,7 @@ public class InfoPanel extends PluginPanel {
 
         actionsContainer.add(buildLinkPanel(DISCORD_ICON, "Talk to us on our", "Discord server", runeLiteProperties.getDiscordInvite()));
         //actionsContainer.add(buildLinkPanel(PATREON_ICON, "Become a patron to", "help support RuneLite", runeLiteProperties.getPatreonLink()));
-        actionsContainer.add(buildLinkPanel(WIKI_ICON, "Information about", "RuneLite and plugins", runeLiteProperties.getWikiLink()));
+        actionsContainer.add(buildLinkPanel(WIKI_ICON, "Information about", "RuneLite and plugins", wikiLink));
 
         add(versionPanel, BorderLayout.NORTH);
         add(actionsContainer, BorderLayout.CENTER);

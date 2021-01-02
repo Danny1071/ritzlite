@@ -38,7 +38,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import javax.imageio.ImageIO;
-
+import javax.inject.Named;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
@@ -48,7 +48,6 @@ import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.StatChanged;
 import net.runelite.api.events.VarbitChanged;
-import net.runelite.client.RuneLiteProperties;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.discord.DiscordService;
 import net.runelite.client.discord.events.DiscordJoinGame;
@@ -108,6 +107,10 @@ public class DiscordPlugin extends Plugin
 	@Inject
 	private OkHttpClient okHttpClient;
 
+	@Inject
+	@Named("runelite.discord.invite")
+	private String discordInvite;
+
 	private final Map<Skill, Integer> skillExp = new HashMap<>();
 	private NavigationButton discordButton;
 	private boolean loginFlag;
@@ -127,7 +130,7 @@ public class DiscordPlugin extends Plugin
 			.tab(false)
 			.tooltip("Join Discord")
 			.icon(icon)
-			.onClick(() -> LinkBrowser.browse(RuneLiteProperties.getDiscordInvite()))
+			.onClick(() -> LinkBrowser.browse(discordInvite))
 			.build();
 
 		clientToolbar.addNavigation(discordButton);

@@ -31,10 +31,9 @@ import lombok.Data;
  * opened on left click.
  */
 @Data
-public class MenuShouldLeftClick
-{
-	/**
-	 * If set to true, the menu will open on left click.
-	 */
-	private boolean forceRightClick;
+public class MenuShouldLeftClick {
+    /**
+     * If set to true, the menu will open on left click.
+     */
+    private boolean forceRightClick;
 }

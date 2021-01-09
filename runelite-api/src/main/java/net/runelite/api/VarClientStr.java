@@ -29,19 +29,18 @@ import lombok.Getter;
 
 /**
  * Client side only, content-developer strings
- *
+ * <p>
  * VarCInts are stored entirely in memory, or locally on a user's
  * machine in the preferences2.dat file depending on how Jagex
  * configured the variable
  */
 @AllArgsConstructor
 @Getter
-public enum VarClientStr
-{
-	CHATBOX_TYPED_TEXT(335),
-	INPUT_TEXT(359),
-	PRIVATE_MESSAGE_TARGET(360),
-	RECENT_FRIENDS_CHAT(362);
+public enum VarClientStr {
+    CHATBOX_TYPED_TEXT(335),
+    INPUT_TEXT(359),
+    PRIVATE_MESSAGE_TARGET(360),
+    RECENT_FRIENDS_CHAT(362);
 
-	private final int index;
+    private final int index;
 }

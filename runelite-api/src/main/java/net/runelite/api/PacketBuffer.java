@@ -24,6 +24,5 @@
  */
 package net.runelite.api;
 
-public interface PacketBuffer
-{
+public interface PacketBuffer {
 }

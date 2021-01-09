@@ -33,8 +33,7 @@ import net.runelite.api.Tile;
  * all item piles are implicitly reset and a new spawn event will be sent.
  */
 @Value
-public class ItemSpawned
-{
-	private final Tile tile;
-	private final TileItem item;
+public class ItemSpawned {
+    private final Tile tile;
+    private final TileItem item;
 }

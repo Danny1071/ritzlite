@@ -31,9 +31,8 @@ import net.runelite.api.Actor;
  * Event fired when an actors overhead text is changed.
  */
 @Value
-public class OverheadTextChanged
-{
-	private final Actor actor;
+public class OverheadTextChanged {
+    private final Actor actor;
 
-	private final String overheadText;
+    private final String overheadText;
 }

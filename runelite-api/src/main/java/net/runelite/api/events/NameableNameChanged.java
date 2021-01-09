@@ -31,10 +31,9 @@ import net.runelite.api.Nameable;
  * An event where a {@link Nameable} has had their name changed.
  */
 @Value
-public class NameableNameChanged
-{
-	/**
-	 * The nameable that changed names.
-	 */
-	private final Nameable nameable;
+public class NameableNameChanged {
+    /**
+     * The nameable that changed names.
+     */
+    private final Nameable nameable;
 }

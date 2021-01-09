@@ -31,18 +31,17 @@ import net.runelite.api.widgets.WidgetInfo;
  * A MenuManager widget menu was clicked. This event is NOT fired for non-MenuManager menu options
  */
 @Data
-public class WidgetMenuOptionClicked
-{
-	/**
-	 * The clicked menu option.
-	 */
-	private String menuOption;
-	/**
-	 * The clicked menu target.
-	 */
-	private String menuTarget;
-	/**
-	 * The type of widget that was clicked.
-	 */
-	private WidgetInfo widget;
+public class WidgetMenuOptionClicked {
+    /**
+     * The clicked menu option.
+     */
+    private String menuOption;
+    /**
+     * The clicked menu target.
+     */
+    private String menuTarget;
+    /**
+     * The type of widget that was clicked.
+     */
+    private WidgetInfo widget;
 }

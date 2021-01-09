@@ -25,6 +25,7 @@
 package net.runelite.api.coords;
 
 import lombok.Value;
+
 import static net.runelite.api.coords.Direction.EAST;
 import static net.runelite.api.coords.Direction.NORTH;
 import static net.runelite.api.coords.Direction.SOUTH;
@@ -43,43 +44,39 @@ import static net.runelite.api.coords.Direction.WEST;
  * </ul>
  */
 @Value
-public class Angle
-{
-	/**
-	 * The raw angle value.
-	 */
-	private final int angle;
+public class Angle {
+    /**
+     * The raw angle value.
+     */
+    private final int angle;
 
-	/**
-	 * Converts the angle value to the nearest cardinal direction.
-	 * <p>
-	 * Each cardinal direction contains 512 angles, ranging between
-	 * -256 and +256 of it's true value. Negative values and values
-	 * above 2047 are wrapped accordingly.
-	 *
-	 * @return Nearest cardinal direction to the angle
-	 */
-	public Direction getNearestDirection()
-	{
-		int round = angle >>> 9;
-		int up = angle & 256;
-		if (up != 0)
-		{
-			// round up
-			++round;
-		}
-		switch (round & 3)
-		{
-			case 0:
-				return SOUTH;
-			case 1:
-				return WEST;
-			case 2:
-				return NORTH;
-			case 3:
-				return EAST;
-			default:
-				throw new IllegalStateException();
-		}
-	}
+    /**
+     * Converts the angle value to the nearest cardinal direction.
+     * <p>
+     * Each cardinal direction contains 512 angles, ranging between
+     * -256 and +256 of it's true value. Negative values and values
+     * above 2047 are wrapped accordingly.
+     *
+     * @return Nearest cardinal direction to the angle
+     */
+    public Direction getNearestDirection() {
+        int round = angle >>> 9;
+        int up = angle & 256;
+        if (up != 0) {
+            // round up
+            ++round;
+        }
+        switch (round & 3) {
+            case 0:
+                return SOUTH;
+            case 1:
+                return WEST;
+            case 2:
+                return NORTH;
+            case 3:
+                return EAST;
+            default:
+                throw new IllegalStateException();
+        }
+    }
 }

@@ -29,15 +29,14 @@ import java.awt.Shape;
 /**
  * Represents an object on the ground of a tile.
  */
-public interface GroundObject extends TileObject
-{
-	Renderable getRenderable();
+public interface GroundObject extends TileObject {
+    Renderable getRenderable();
 
-	/**
-	 * Gets the convex hull of the objects model.
-	 *
-	 * @return the convex hull
-	 * @see net.runelite.api.model.Jarvis
-	 */
-	Shape getConvexHull();
+    /**
+     * Gets the convex hull of the objects model.
+     *
+     * @return the convex hull
+     * @see net.runelite.api.model.Jarvis
+     */
+    Shape getConvexHull();
 }

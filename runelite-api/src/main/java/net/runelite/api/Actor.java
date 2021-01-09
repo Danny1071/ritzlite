@@ -29,6 +29,7 @@ import java.awt.Polygon;
 import java.awt.Shape;
 import java.awt.image.BufferedImage;
 import javax.annotation.Nullable;
+
 import net.runelite.api.annotations.VisibleForDevtools;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldArea;
@@ -37,233 +38,232 @@ import net.runelite.api.coords.WorldPoint;
 /**
  * Represents a RuneScape actor/entity.
  */
-public interface Actor extends Renderable
-{
-	/**
-	 * Gets the combat level of the actor.
-	 *
-	 * @return the combat level
-	 */
-	int getCombatLevel();
+public interface Actor extends Renderable {
+    /**
+     * Gets the combat level of the actor.
+     *
+     * @return the combat level
+     */
+    int getCombatLevel();
 
-	/**
-	 * Gets the name of the actor.
-	 *
-	 * @return the name
-	 */
-	@Nullable
-	String getName();
+    /**
+     * Gets the name of the actor.
+     *
+     * @return the name
+     */
+    @Nullable
+    String getName();
 
-	/**
-	 * Gets the actor being interacted with.
-	 * <p>
-	 * Examples of interaction include:
-	 * <ul>
-	 *     <li>A monster focusing an Actor to attack</li>
-	 *     <li>Targetting a player to trade</li>
-	 *     <li>Following a player</li>
-	 * </ul>
-	 *
-	 * @return the actor, null if no interaction is occurring
-	 */
-	Actor getInteracting();
+    /**
+     * Gets the actor being interacted with.
+     * <p>
+     * Examples of interaction include:
+     * <ul>
+     *     <li>A monster focusing an Actor to attack</li>
+     *     <li>Targetting a player to trade</li>
+     *     <li>Following a player</li>
+     * </ul>
+     *
+     * @return the actor, null if no interaction is occurring
+     */
+    Actor getInteracting();
 
-	/**
-	 * Gets the health of the actor in {@link #getHealthScale()} units.
-	 *
-	 * The server does not transmit actors' real health, only this value
-	 * between zero and {@link #getHealthScale()}. Some actors may be
-	 * missing this info, in which case -1 is returned.
-	 */
-	int getHealthRatio();
+    /**
+     * Gets the health of the actor in {@link #getHealthScale()} units.
+     * <p>
+     * The server does not transmit actors' real health, only this value
+     * between zero and {@link #getHealthScale()}. Some actors may be
+     * missing this info, in which case -1 is returned.
+     */
+    int getHealthRatio();
 
-	/**
-	 * Gets the maximum value {@link #getHealthRatio()} can return
-	 *
-	 * For actors with the default size health bar this is 30, but
-	 * for bosses with a larger health bar this can be a larger number.
-	 * Some actors may be missing this info, in which case -1 is returned.
-	 */
-	int getHealthScale();
+    /**
+     * Gets the maximum value {@link #getHealthRatio()} can return
+     * <p>
+     * For actors with the default size health bar this is 30, but
+     * for bosses with a larger health bar this can be a larger number.
+     * Some actors may be missing this info, in which case -1 is returned.
+     */
+    int getHealthScale();
 
-	/**
-	 * Gets the server-side location of the actor.
-	 * <p>
-	 * This value is typically ahead of where the client renders and is not
-	 * affected by things such as animations.
-	 *
-	 * @return the server location
-	 */
-	WorldPoint getWorldLocation();
+    /**
+     * Gets the server-side location of the actor.
+     * <p>
+     * This value is typically ahead of where the client renders and is not
+     * affected by things such as animations.
+     *
+     * @return the server location
+     */
+    WorldPoint getWorldLocation();
 
-	/**
-	 * Gets the client-side location of the actor.
-	 *
-	 * @return the client location
-	 */
-	LocalPoint getLocalLocation();
+    /**
+     * Gets the client-side location of the actor.
+     *
+     * @return the client location
+     */
+    LocalPoint getLocalLocation();
 
-	@VisibleForDevtools
-	void setIdlePoseAnimation(int animation);
+    @VisibleForDevtools
+    void setIdlePoseAnimation(int animation);
 
-	@VisibleForDevtools
-	void setPoseAnimation(int animation);
+    @VisibleForDevtools
+    void setPoseAnimation(int animation);
 
-	/**
-	 * Gets the orientation of the actor.
-	 *
-	 * @return the orientation
-	 * @see net.runelite.api.coords.Angle
-	 */
-	int getOrientation();
+    /**
+     * Gets the orientation of the actor.
+     *
+     * @return the orientation
+     * @see net.runelite.api.coords.Angle
+     */
+    int getOrientation();
 
-	/**
-	 * Gets the current animation the actor is performing.
-	 *
-	 * @return the animation ID
-	 * @see AnimationID
-	 */
-	int getAnimation();
+    /**
+     * Gets the current animation the actor is performing.
+     *
+     * @return the animation ID
+     * @see AnimationID
+     */
+    int getAnimation();
 
-	/**
-	 * Gets the secondary animation the actor is performing.
-	 *
-	 * @return the animation ID
-	 * @see AnimationID
-	 */
-	int getPoseAnimation();
+    /**
+     * Gets the secondary animation the actor is performing.
+     *
+     * @return the animation ID
+     * @see AnimationID
+     */
+    int getPoseAnimation();
 
-	/**
-	 * If this is equal to the pose animation, the pose animation is ignored when
-	 * you are doing another action.
-	 *
-	 * @return the animation ID
-	 * @see AnimationID
-	 */
-	int getIdlePoseAnimation();
+    /**
+     * If this is equal to the pose animation, the pose animation is ignored when
+     * you are doing another action.
+     *
+     * @return the animation ID
+     * @see AnimationID
+     */
+    int getIdlePoseAnimation();
 
-	/**
-	 * Sets an animation for the actor to perform.
-	 *
-	 * @param animation the animation ID
-	 * @see AnimationID
-	 */
-	@VisibleForDevtools
-	void setAnimation(int animation);
+    /**
+     * Sets an animation for the actor to perform.
+     *
+     * @param animation the animation ID
+     * @see AnimationID
+     */
+    @VisibleForDevtools
+    void setAnimation(int animation);
 
-	/**
-	 * Sets the frame of the animation the actor is performing.
-	 *
-	 * @param actionFrame the animation frame
-	 */
-	@VisibleForDevtools
-	void setActionFrame(int actionFrame);
+    /**
+     * Sets the frame of the animation the actor is performing.
+     *
+     * @param actionFrame the animation frame
+     */
+    @VisibleForDevtools
+    void setActionFrame(int actionFrame);
 
-	/**
-	 * Gets the graphic that is currently on the player.
-	 *
-	 * @return the graphic of the actor
-	 * @see GraphicID
-	 */
-	int getGraphic();
+    /**
+     * Gets the graphic that is currently on the player.
+     *
+     * @return the graphic of the actor
+     * @see GraphicID
+     */
+    int getGraphic();
 
-	@VisibleForDevtools
-	void setGraphic(int graphic);
+    @VisibleForDevtools
+    void setGraphic(int graphic);
 
-	@VisibleForDevtools
-	void setSpotAnimFrame(int spotAnimFrame);
+    @VisibleForDevtools
+    void setSpotAnimFrame(int spotAnimFrame);
 
-	/**
-	 * Gets the canvas area of the current tile the actor is standing on.
-	 *
-	 * @return the current tile canvas area
-	 */
-	Polygon getCanvasTilePoly();
+    /**
+     * Gets the canvas area of the current tile the actor is standing on.
+     *
+     * @return the current tile canvas area
+     */
+    Polygon getCanvasTilePoly();
 
-	/**
-	 * Gets the point at which text should be drawn, relative to the
-	 * current location with the given z-axis offset.
-	 *
-	 * @param graphics engine graphics
-	 * @param text the text to draw
-	 * @param zOffset the z-axis offset
-	 * @return the text drawing location
-	 */
-	@Nullable
-	Point getCanvasTextLocation(Graphics2D graphics, String text, int zOffset);
+    /**
+     * Gets the point at which text should be drawn, relative to the
+     * current location with the given z-axis offset.
+     *
+     * @param graphics engine graphics
+     * @param text     the text to draw
+     * @param zOffset  the z-axis offset
+     * @return the text drawing location
+     */
+    @Nullable
+    Point getCanvasTextLocation(Graphics2D graphics, String text, int zOffset);
 
-	/**
-	 * Gets the point at which an image should be drawn, relative to the
-	 * current location with the given z-axis offset.
-	 *
-	 * @param image the image to draw
-	 * @param zOffset the z-axis offset
-	 * @return the image drawing location
-	 */
-	Point getCanvasImageLocation(BufferedImage image, int zOffset);
+    /**
+     * Gets the point at which an image should be drawn, relative to the
+     * current location with the given z-axis offset.
+     *
+     * @param image   the image to draw
+     * @param zOffset the z-axis offset
+     * @return the image drawing location
+     */
+    Point getCanvasImageLocation(BufferedImage image, int zOffset);
 
 
-	/**
-	 * Gets the point at which a sprite should be drawn, relative to the
-	 * current location with the given z-axis offset.
-	 *
-	 * @param sprite the sprite to draw
-	 * @param zOffset the z-axis offset
-	 * @return the sprite drawing location
-	 */
-	Point getCanvasSpriteLocation(SpritePixels sprite, int zOffset);
+    /**
+     * Gets the point at which a sprite should be drawn, relative to the
+     * current location with the given z-axis offset.
+     *
+     * @param sprite  the sprite to draw
+     * @param zOffset the z-axis offset
+     * @return the sprite drawing location
+     */
+    Point getCanvasSpriteLocation(SpritePixels sprite, int zOffset);
 
-	/**
-	 * Gets a point on the canvas of where this actors mini-map indicator
-	 * should appear.
-	 *
-	 * @return mini-map location on canvas
-	 */
-	Point getMinimapLocation();
+    /**
+     * Gets a point on the canvas of where this actors mini-map indicator
+     * should appear.
+     *
+     * @return mini-map location on canvas
+     */
+    Point getMinimapLocation();
 
-	/**
-	 * Gets the logical height of the actors model.
-	 * <p>
-	 * This z-axis offset is roughly where the health bar of the actor
-	 * is drawn.
-	 *
-	 * @return the logical height
-	 */
-	int getLogicalHeight();
+    /**
+     * Gets the logical height of the actors model.
+     * <p>
+     * This z-axis offset is roughly where the health bar of the actor
+     * is drawn.
+     *
+     * @return the logical height
+     */
+    int getLogicalHeight();
 
-	/**
-	 * Gets the convex hull of the actors model.
-	 *
-	 * @return the convex hull
-	 * @see net.runelite.api.model.Jarvis
-	 */
-	Shape getConvexHull();
+    /**
+     * Gets the convex hull of the actors model.
+     *
+     * @return the convex hull
+     * @see net.runelite.api.model.Jarvis
+     */
+    Shape getConvexHull();
 
-	/**
-	 * Gets the world area that the actor occupies.
-	 *
-	 * @return the world area
-	 */
-	WorldArea getWorldArea();
+    /**
+     * Gets the world area that the actor occupies.
+     *
+     * @return the world area
+     */
+    WorldArea getWorldArea();
 
-	/**
-	 * Gets the overhead text that is displayed above the actor
-	 *
-	 * @return the overhead text
-	 */
-	String getOverheadText();
+    /**
+     * Gets the overhead text that is displayed above the actor
+     *
+     * @return the overhead text
+     */
+    String getOverheadText();
 
-	/**
-	 * Sets the overhead text that is displayed above the actor
-	 *
-	 * @param overheadText the overhead text
-	 */
-	void setOverheadText(String overheadText);
+    /**
+     * Sets the overhead text that is displayed above the actor
+     *
+     * @param overheadText the overhead text
+     */
+    void setOverheadText(String overheadText);
 
-	/**
-	 * Returns true if this actor has died
-	 *
-	 * @return
-	 */
-	boolean isDead();
+    /**
+     * Returns true if this actor has died
+     *
+     * @return
+     */
+    boolean isDead();
 }

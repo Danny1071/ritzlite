@@ -27,21 +27,22 @@ package net.runelite.api;
 /**
  * Represents the entire 3D scene
  */
-public interface Scene
-{
-	/**
-	 * Gets the tiles in the scene
-	 *
-	 * @return the tiles in [plane][x][y]
-	 */
-	Tile[][][] getTiles();
+public interface Scene {
+    /**
+     * Gets the tiles in the scene
+     *
+     * @return the tiles in [plane][x][y]
+     */
+    Tile[][][] getTiles();
 
-	int getDrawDistance();
-	void setDrawDistance(int drawDistance);
+    int getDrawDistance();
 
-	/**
-	 * Remove a game object from the scene
-	 * @param gameObject
-	 */
-	void removeGameObject(GameObject gameObject);
+    void setDrawDistance(int drawDistance);
+
+    /**
+     * Remove a game object from the scene
+     *
+     * @param gameObject
+     */
+    void removeGameObject(GameObject gameObject);
 }

@@ -41,33 +41,32 @@ import net.runelite.api.MessageNode;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ChatMessage
-{
-	/**
-	 * The underlying MessageNode for the message.
-	 */
-	private MessageNode messageNode;
-	/**
-	 * The type of message received.
-	 */
-	private ChatMessageType type;
-	/**
-	 * The name of the player that sent the message.
-	 */
-	private String name;
-	/**
-	 * The contents of the message.
-	 */
-	private String message;
-	/**
-	 * The sender of the message.
-	 * <p>
-	 * This field is only used for friends chat messages and refers to the
-	 * current name of the friends chat the client is in.
-	 */
-	private String sender;
-	/**
-	 * Timestamp of the message.
-	 */
-	private int timestamp;
+public class ChatMessage {
+    /**
+     * The underlying MessageNode for the message.
+     */
+    private MessageNode messageNode;
+    /**
+     * The type of message received.
+     */
+    private ChatMessageType type;
+    /**
+     * The name of the player that sent the message.
+     */
+    private String name;
+    /**
+     * The contents of the message.
+     */
+    private String message;
+    /**
+     * The sender of the message.
+     * <p>
+     * This field is only used for friends chat messages and refers to the
+     * current name of the friends chat the client is in.
+     */
+    private String sender;
+    /**
+     * Timestamp of the message.
+     */
+    private int timestamp;
 }

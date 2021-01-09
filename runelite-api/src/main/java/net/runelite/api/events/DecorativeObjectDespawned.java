@@ -33,14 +33,13 @@ import net.runelite.api.Tile;
  * is removed.
  */
 @Data
-public class DecorativeObjectDespawned
-{
-	/**
-	 * The affected tile.
-	 */
-	private Tile tile;
-	/**
-	 * The removed decorative object.
-	 */
-	private DecorativeObject decorativeObject;
+public class DecorativeObjectDespawned {
+    /**
+     * The affected tile.
+     */
+    private Tile tile;
+    /**
+     * The removed decorative object.
+     */
+    private DecorativeObject decorativeObject;
 }

@@ -30,28 +30,28 @@ package net.runelite.api;
  *
  * @see ParamID
  */
-public interface ParamHolder
-{
-	IterableHashTable<Node> getParams();
-	void setParams(IterableHashTable<Node> params);
+public interface ParamHolder {
+    IterableHashTable<Node> getParams();
 
-	/**
-	 * Gets the value of a given {@link ParamID}, or its default if it is unset
-	 */
-	int getIntValue(int paramID);
+    void setParams(IterableHashTable<Node> params);
 
-	/**
-	 * Sets the value of a given {@link ParamID}
-	 */
-	void setValue(int paramID, int value);
+    /**
+     * Gets the value of a given {@link ParamID}, or its default if it is unset
+     */
+    int getIntValue(int paramID);
 
-	/**
-	 * Gets the value of a given {@link ParamID}, or its default if it is unset
-	 */
-	String getStringValue(int paramID);
+    /**
+     * Sets the value of a given {@link ParamID}
+     */
+    void setValue(int paramID, int value);
 
-	/**
-	 * Sets the value of a given {@link ParamID}
-	 */
-	void setValue(int paramID, String value);
+    /**
+     * Gets the value of a given {@link ParamID}, or its default if it is unset
+     */
+    String getStringValue(int paramID);
+
+    /**
+     * Sets the value of a given {@link ParamID}
+     */
+    void setValue(int paramID, String value);
 }

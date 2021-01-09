@@ -33,13 +33,12 @@ import net.runelite.api.VarClientInt;
  */
 @Getter
 @RequiredArgsConstructor
-public enum InputType
-{
-	RUNELITE_CHATBOX_PANEL(-3),
-	RUNELITE(-2),
-	NONE(0),
-	PRIVATE_MESSAGE(6),
-	SEARCH(11);
+public enum InputType {
+    RUNELITE_CHATBOX_PANEL(-3),
+    RUNELITE(-2),
+    NONE(0),
+    PRIVATE_MESSAGE(6),
+    SEARCH(11);
 
-	private final int type;
+    private final int type;
 }

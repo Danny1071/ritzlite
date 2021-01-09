@@ -31,7 +31,6 @@ import net.runelite.api.World;
  * Event when the world list is loaded for the world switcher
  */
 @Value
-public class WorldListLoad
-{
-	private final World[] worlds;
+public class WorldListLoad {
+    private final World[] worlds;
 }

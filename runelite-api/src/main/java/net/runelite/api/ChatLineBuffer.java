@@ -29,30 +29,29 @@ package net.runelite.api;
 /**
  * Represents the buffer containing all messages in the chatbox.
  */
-public interface ChatLineBuffer
-{
-	/**
-	 * Gets an array of message nodes currently in the chatbox.
-	 *
-	 * @return messages in the chatbox
-	 */
-	MessageNode[] getLines();
+public interface ChatLineBuffer {
+    /**
+     * Gets an array of message nodes currently in the chatbox.
+     *
+     * @return messages in the chatbox
+     */
+    MessageNode[] getLines();
 
-	/**
-	 * Gets the length of the {@link #getLines()} array.
-	 *
-	 * @return the length
-	 */
-	int getLength();
+    /**
+     * Gets the length of the {@link #getLines()} array.
+     *
+     * @return the length
+     */
+    int getLength();
 
-	/**
-	 * Removes a message node.
-	 *
-	 * This method modifies the underlying MessageNode array. If removing multiple MessageNodes at a time,
-	 * clone the original {@link #getLines()} array; as items in the array will get modified and be left in an
-	 * inconsistent state.
-	 *
-	 * @param node the {@link MessageNode} to remove
-	 */
-	void removeMessageNode(MessageNode node);
+    /**
+     * Removes a message node.
+     * <p>
+     * This method modifies the underlying MessageNode array. If removing multiple MessageNodes at a time,
+     * clone the original {@link #getLines()} array; as items in the array will get modified and be left in an
+     * inconsistent state.
+     *
+     * @param node the {@link MessageNode} to remove
+     */
+    void removeMessageNode(MessageNode node);
 }

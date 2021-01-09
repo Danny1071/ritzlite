@@ -31,7 +31,6 @@ import lombok.Value;
  * @see net.runelite.api.VarClientStr
  */
 @Value
-public class VarClientStrChanged
-{
-	private int index;
+public class VarClientStrChanged {
+    private int index;
 }

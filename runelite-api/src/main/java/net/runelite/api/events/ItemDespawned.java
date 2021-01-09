@@ -33,8 +33,7 @@ import net.runelite.api.Tile;
  * all item piles are implicitly despawned, and despawn events will not be sent.
  */
 @Value
-public class ItemDespawned
-{
-	private final Tile tile;
-	private final TileItem item;
+public class ItemDespawned {
+    private final Tile tile;
+    private final TileItem item;
 }

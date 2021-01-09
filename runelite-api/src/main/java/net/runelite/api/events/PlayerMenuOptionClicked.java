@@ -31,14 +31,13 @@ import lombok.Data;
  * been clicked (ie. HiScore Lookup).
  */
 @Data
-public class PlayerMenuOptionClicked
-{
-	/**
-	 * The menu option clicked.
-	 */
-	private String menuOption;
-	/**
-	 * The target player.
-	 */
-	private String menuTarget;
+public class PlayerMenuOptionClicked {
+    /**
+     * The menu option clicked.
+     */
+    private String menuOption;
+    /**
+     * The target player.
+     */
+    private String menuTarget;
 }

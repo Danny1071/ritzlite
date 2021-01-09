@@ -32,10 +32,9 @@ import net.runelite.api.StructComposition;
  * its data is initialized.
  */
 @Data
-public class PostStructComposition
-{
-	/**
-	 * The newly created struct.
-	 */
-	private StructComposition structComposition;
+public class PostStructComposition {
+    /**
+     * The newly created struct.
+     */
+    private StructComposition structComposition;
 }

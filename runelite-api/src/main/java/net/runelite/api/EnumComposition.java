@@ -24,15 +24,14 @@
  */
 package net.runelite.api;
 
-public interface EnumComposition
-{
-	int[] getKeys();
+public interface EnumComposition {
+    int[] getKeys();
 
-	int[] getIntVals();
+    int[] getIntVals();
 
-	String[] getStringVals();
+    String[] getStringVals();
 
-	int getIntValue(int key);
+    int getIntValue(int key);
 
-	String getStringValue(int key);
+    String getStringValue(int key);
 }

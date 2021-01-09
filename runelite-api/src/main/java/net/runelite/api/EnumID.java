@@ -29,9 +29,8 @@ package net.runelite.api;
  * <p>
  * Note: This class is not complete and may be missing mapped IDs.
  */
-public final class EnumID
-{
-	public static final int MUSIC_TRACK_NAMES = 812;
-	public static final int MUSIC_TRACK_IDS = 819;
-	public static final int XPDROP_COLORS = 1169;
+public final class EnumID {
+    public static final int MUSIC_TRACK_NAMES = 812;
+    public static final int MUSIC_TRACK_IDS = 819;
+    public static final int XPDROP_COLORS = 1169;
 }

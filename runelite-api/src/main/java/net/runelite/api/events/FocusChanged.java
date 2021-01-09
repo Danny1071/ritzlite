@@ -37,10 +37,9 @@ import lombok.Data;
  * </ul>
  */
 @Data
-public class FocusChanged
-{
-	/**
-	 * The new focus state.
-	 */
-	private boolean focused;
+public class FocusChanged {
+    /**
+     * The new focus state.
+     */
+    private boolean focused;
 }

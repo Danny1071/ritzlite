@@ -27,34 +27,33 @@ package net.runelite.api;
 /**
  * An enumeration of prayer icons above the head.
  */
-public enum HeadIcon
-{
-	/**
-	 * Protect from melee.
-	 */
-	MELEE,
-	/**
-	 * Protect from ranged.
-	 */
-	RANGED,
-	/**
-	 * Protect from magic.
-	 */
-	MAGIC,
-	/**
-	 * Retribution prayer.
-	 */
-	RETRIBUTION,
-	/**
-	 * Smite prayer.
-	 */
-	SMITE,
-	/**
-	 * Redemption prayer.
-	 */
-	REDEMPTION,
-	/**
-	 * Protect from range and mage (ie. used by Kalphite Queen).
-	 */
-	RANGE_MAGE
+public enum HeadIcon {
+    /**
+     * Protect from melee.
+     */
+    MELEE,
+    /**
+     * Protect from ranged.
+     */
+    RANGED,
+    /**
+     * Protect from magic.
+     */
+    MAGIC,
+    /**
+     * Retribution prayer.
+     */
+    RETRIBUTION,
+    /**
+     * Smite prayer.
+     */
+    SMITE,
+    /**
+     * Redemption prayer.
+     */
+    REDEMPTION,
+    /**
+     * Protect from range and mage (ie. used by Kalphite Queen).
+     */
+    RANGE_MAGE
 }

@@ -31,7 +31,6 @@ import net.runelite.api.Actor;
  * An event fired when an actor dies.
  */
 @Value
-public class ActorDeath
-{
-	private final Actor actor;
+public class ActorDeath {
+    private final Actor actor;
 }

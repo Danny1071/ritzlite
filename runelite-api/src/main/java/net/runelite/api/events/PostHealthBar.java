@@ -28,7 +28,6 @@ import lombok.Data;
 import net.runelite.api.HealthBar;
 
 @Data
-public class PostHealthBar
-{
-	private HealthBar healthBar;
+public class PostHealthBar {
+    private HealthBar healthBar;
 }

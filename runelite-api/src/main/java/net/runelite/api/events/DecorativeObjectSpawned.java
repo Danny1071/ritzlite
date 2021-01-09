@@ -32,14 +32,13 @@ import net.runelite.api.Tile;
  * An event where a {@link DecorativeObject} is attached to a {@link Tile}.
  */
 @Data
-public class DecorativeObjectSpawned
-{
-	/**
-	 * The affected tile.
-	 */
-	private Tile tile;
-	/**
-	 * The newly spawned decorative object.
-	 */
-	private DecorativeObject decorativeObject;
+public class DecorativeObjectSpawned {
+    /**
+     * The affected tile.
+     */
+    private Tile tile;
+    /**
+     * The newly spawned decorative object.
+     */
+    private DecorativeObject decorativeObject;
 }

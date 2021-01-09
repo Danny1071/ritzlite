@@ -27,19 +27,18 @@ package net.runelite.api;
 /**
  * Represents a friends chat member.
  */
-public interface FriendsChatMember extends ChatPlayer
-{
-	/**
-	 * Gets the world the member is in.
-	 *
-	 * @return the world
-	 */
-	int getWorld();
+public interface FriendsChatMember extends ChatPlayer {
+    /**
+     * Gets the world the member is in.
+     *
+     * @return the world
+     */
+    int getWorld();
 
-	/**
-	 * Gets the rank of the friends chat member.
-	 *
-	 * @return the rank
-	 */
-	FriendsChatRank getRank();
+    /**
+     * Gets the rank of the friends chat member.
+     *
+     * @return the rank
+     */
+    FriendsChatRank getRank();
 }

@@ -29,43 +29,45 @@ import java.awt.Shape;
 /**
  * Represents one or two walls on a tile
  */
-public interface WallObject extends TileObject
-{
-	/**
-	 * A bitfield with the orientation of a wall
-	 * 1 = East
-	 * 2 = North
-	 * 4 = West
-	 * 8 = South
-	 */
-	int getOrientationA();
+public interface WallObject extends TileObject {
+    /**
+     * A bitfield with the orientation of a wall
+     * 1 = East
+     * 2 = North
+     * 4 = West
+     * 8 = South
+     */
+    int getOrientationA();
 
-	/**
-	 * A bitfield containing the orientation of the second wall on this tile,
-	 * or 0 if there is no second wall.
-	 * @see #getOrientationA
-	 */
-	int getOrientationB();
+    /**
+     * A bitfield containing the orientation of the second wall on this tile,
+     * or 0 if there is no second wall.
+     *
+     * @see #getOrientationA
+     */
+    int getOrientationB();
 
-	/**
-	 * A bitfield containing various flags:
-	 * <pre>{@code
-	 * object type id = bits & 0x20
-	 * orientation (0-3) = bits >>> 6 & 3
-	 * supports items = bits >>> 8 & 1
-	 * }</pre>
-	 */
-	int getConfig();
+    /**
+     * A bitfield containing various flags:
+     * <pre>{@code
+     * object type id = bits & 0x20
+     * orientation (0-3) = bits >>> 6 & 3
+     * supports items = bits >>> 8 & 1
+     * }</pre>
+     */
+    int getConfig();
 
-	/**
-	 * Gets the convex hull of the objects model.
-	 *
-	 * @return the convex hull
-	 * @see net.runelite.api.model.Jarvis
-	 */
-	Shape getConvexHull();
-	Shape getConvexHull2();
+    /**
+     * Gets the convex hull of the objects model.
+     *
+     * @return the convex hull
+     * @see net.runelite.api.model.Jarvis
+     */
+    Shape getConvexHull();
 
-	Renderable getRenderable1();
-	Renderable getRenderable2();
+    Shape getConvexHull2();
+
+    Renderable getRenderable1();
+
+    Renderable getRenderable2();
 }

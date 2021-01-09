@@ -124,7 +124,7 @@ public class DiscordPlugin extends Plugin
 	@Override
 	protected void startUp() throws Exception
 	{
-		final BufferedImage icon = ImageUtil.getResourceStreamFromClass(getClass(), "discord.png");
+		final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "discord.png");
 
 		discordButton = NavigationButton.builder()
 			.tab(false)

@@ -39,46 +39,48 @@ import net.runelite.api.MenuAction;
  * it seems that this event still triggers with the "Cancel" action.
  */
 @Data
-public class MenuOptionClicked {
-    /**
-     * The action parameter used in the click.
-     */
-    private int actionParam;
-    /**
-     * The option text added to the menu.
-     */
-    private String menuOption;
-    /**
-     * The target of the action.
-     */
-    private String menuTarget;
-    /**
-     * The action performed.
-     */
-    private MenuAction menuAction;
-    /**
-     * The ID of the object, actor, or item that the interaction targets.
-     */
-    private int id;
-    /**
-     * The ID of the widget where the menu was clicked.
-     *
-     * @see net.runelite.api.widgets.WidgetID
-     */
-    private int widgetId;
-    /**
-     * Whether or not the event has been consumed by a subscriber.
-     */
-    private boolean consumed;
+public class MenuOptionClicked
+{
+	/**
+	 * The action parameter used in the click.
+	 */
+	private int actionParam;
+	/**
+	 * The option text added to the menu.
+	 */
+	private String menuOption;
+	/**
+	 * The target of the action.
+	 */
+	private String menuTarget;
+	/**
+	 * The action performed.
+	 */
+	private MenuAction menuAction;
+	/**
+	 * The ID of the object, actor, or item that the interaction targets.
+	 */
+	private int id;
+	/**
+	 * The ID of the widget where the menu was clicked.
+	 *
+	 * @see net.runelite.api.widgets.WidgetID
+	 */
+	private int widgetId;
+	/**
+	 * Whether or not the event has been consumed by a subscriber.
+	 */
+	private boolean consumed;
 
-    /**
-     * Marks the event as having been consumed.
-     * <p>
-     * Setting this state indicates that a plugin has processed the menu
-     * option being clicked and that the event will not be passed on
-     * for handling by vanilla client code.
-     */
-    public void consume() {
-        this.consumed = true;
-    }
+	/**
+	 * Marks the event as having been consumed.
+	 * <p>
+	 * Setting this state indicates that a plugin has processed the menu
+	 * option being clicked and that the event will not be passed on
+	 * for handling by vanilla client code.
+	 */
+	public void consume()
+	{
+		this.consumed = true;
+	}
 }

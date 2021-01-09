@@ -34,13 +34,15 @@ import net.runelite.api.Player;
  * Note: This event does not get called for the local player.
  */
 @Value
-public class PlayerDespawned {
-    /**
-     * The despawned player.
-     */
-    private final Player player;
+public class PlayerDespawned
+{
+	/**
+	 * The despawned player.
+	 */
+	private final Player player;
 
-    public Actor getActor() {
-        return player;
-    }
+	public Actor getActor()
+	{
+		return player;
+	}
 }

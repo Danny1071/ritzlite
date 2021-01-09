@@ -41,9 +41,10 @@ import net.runelite.api.Actor;
  * @see net.runelite.api.AnimationID
  */
 @Data
-public class AnimationChanged {
-    /**
-     * The actor that has entered a new animation.
-     */
-    private Actor actor;
+public class AnimationChanged
+{
+	/**
+	 * The actor that has entered a new animation.
+	 */
+	private Actor actor;
 }

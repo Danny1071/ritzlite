@@ -27,19 +27,19 @@ package net.runelite.api;
 /**
  * Represents an item inside an {@link ItemLayer}.
  */
-public interface TileItem extends Renderable {
-    /**
-     * @return the ID of the item
-     * @see ItemID
-     */
-    int getId();
+public interface TileItem extends Renderable
+{
+	/**
+	 * @return the ID of the item
+	 * @see ItemID
+	 */
+	int getId();
 
-    int getQuantity();
+	int getQuantity();
 
-    /**
-     * Time in game ticks when the item spawned (relative to us)
-     *
-     * @return
-     */
-    int getSpawnTime();
+	/**
+	 * Time in game ticks when the item spawned (relative to us)
+	 * @return
+	 */
+	int getSpawnTime();
 }

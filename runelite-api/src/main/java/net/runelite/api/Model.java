@@ -27,72 +27,63 @@ package net.runelite.api;
 /**
  * Represents the model of an object.
  */
-public interface Model extends Renderable {
-    int getVerticesCount();
+public interface Model extends Renderable
+{
+	int getVerticesCount();
 
-    int[] getVerticesX();
+	int[] getVerticesX();
 
-    int[] getVerticesY();
+	int[] getVerticesY();
 
-    int[] getVerticesZ();
+	int[] getVerticesZ();
 
-    int getTrianglesCount();
+	int getTrianglesCount();
 
-    int[] getTrianglesX();
+	int[] getTrianglesX();
 
-    int[] getTrianglesY();
+	int[] getTrianglesY();
 
-    int[] getTrianglesZ();
+	int[] getTrianglesZ();
 
-    int[] getFaceColors1();
+	int[] getFaceColors1();
 
-    int[] getFaceColors2();
+	int[] getFaceColors2();
 
-    int[] getFaceColors3();
+	int[] getFaceColors3();
 
-    byte[] getTriangleTransparencies();
+	byte[] getTriangleTransparencies();
 
-    int getSceneId();
+	int getSceneId();
+	void setSceneId(int sceneId);
 
-    void setSceneId(int sceneId);
+	int getBufferOffset();
+	void setBufferOffset(int bufferOffset);
 
-    int getBufferOffset();
+	int getUvBufferOffset();
+	void setUvBufferOffset(int bufferOffset);
 
-    void setBufferOffset(int bufferOffset);
+	int getModelHeight();
 
-    int getUvBufferOffset();
+	void calculateBoundsCylinder();
 
-    void setUvBufferOffset(int bufferOffset);
+	byte[] getFaceRenderPriorities();
 
-    int getModelHeight();
+	int getRadius();
 
-    void calculateBoundsCylinder();
+	short[] getFaceTextures();
 
-    byte[] getFaceRenderPriorities();
+	float[][] getFaceTextureUCoordinates();
+	float[][] getFaceTextureVCoordinates();
 
-    int getRadius();
+	void calculateExtreme(int orientation);
 
-    short[] getFaceTextures();
+	int getCenterX();
+	int getCenterY();
+	int getCenterZ();
+	int getExtremeX();
+	int getExtremeY();
+	int getExtremeZ();
 
-    float[][] getFaceTextureUCoordinates();
-
-    float[][] getFaceTextureVCoordinates();
-
-    void calculateExtreme(int orientation);
-
-    int getCenterX();
-
-    int getCenterY();
-
-    int getCenterZ();
-
-    int getExtremeX();
-
-    int getExtremeY();
-
-    int getExtremeZ();
-
-    int getXYZMag();
-
-    boolean isClickable();
+	int getXYZMag();
+	boolean isClickable();
 }

@@ -33,17 +33,18 @@ import net.runelite.api.Tile;
  * has been modified.
  */
 @Data
-public class DecorativeObjectChanged {
-    /**
-     * The affected tile.
-     */
-    private Tile tile;
-    /**
-     * The decorative object that has been replaced.
-     */
-    private DecorativeObject previous;
-    /**
-     * The new decoration for the tile.
-     */
-    private DecorativeObject decorativeObject;
+public class DecorativeObjectChanged
+{
+	/**
+	 * The affected tile.
+	 */
+	private Tile tile;
+	/**
+	 * The decorative object that has been replaced.
+	 */
+	private DecorativeObject previous;
+	/**
+	 * The new decoration for the tile.
+	 */
+	private DecorativeObject decorativeObject;
 }

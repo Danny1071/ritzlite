@@ -31,9 +31,10 @@ import lombok.Data;
  * the cursor.
  */
 @Data
-public class DraggingWidgetChanged {
-    /**
-     * Whether a widget is currently being dragged.
-     */
-    private boolean draggingWidget;
+public class DraggingWidgetChanged
+{
+	/**
+	 * Whether a widget is currently being dragged.
+	 */
+	private boolean draggingWidget;
 }

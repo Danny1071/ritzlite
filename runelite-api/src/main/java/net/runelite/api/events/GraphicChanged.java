@@ -43,9 +43,10 @@ import net.runelite.api.Actor;
  * @see net.runelite.api.GraphicID
  */
 @Data
-public class GraphicChanged {
-    /**
-     * The actor that has had their graphic changed.
-     */
-    private Actor actor;
+public class GraphicChanged
+{
+	/**
+	 * The actor that has had their graphic changed.
+	 */
+	private Actor actor;
 }

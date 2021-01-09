@@ -32,9 +32,10 @@ import net.runelite.api.Tile;
  * Called when the quantity of an item pile changes.
  */
 @Value
-public class ItemQuantityChanged {
-    private final TileItem item;
-    private final Tile tile;
-    private final int oldQuantity;
-    private final int newQuantity;
+public class ItemQuantityChanged
+{
+	private final TileItem item;
+	private final Tile tile;
+	private final int oldQuantity;
+	private final int newQuantity;
 }

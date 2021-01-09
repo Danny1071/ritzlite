@@ -27,17 +27,18 @@ package net.runelite.api.coords;
 import static net.runelite.api.coords.Direction.NORTH;
 import static net.runelite.api.coords.Direction.WEST;
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
-public class AngleTest {
+public class AngleTest
+{
 
-    @Test
-    public void getNearestDirection() {
-        Angle angle = new Angle(512 + 10);
-        assertEquals(WEST, angle.getNearestDirection());
+	@Test
+	public void getNearestDirection()
+	{
+		Angle angle = new Angle(512 + 10);
+		assertEquals(WEST, angle.getNearestDirection());
 
-        angle = new Angle(512 + 256 + 1);
-        assertEquals(NORTH, angle.getNearestDirection());
-    }
+		angle = new Angle(512 + 256 + 1);
+		assertEquals(NORTH, angle.getNearestDirection());
+	}
 }

@@ -32,13 +32,14 @@ import lombok.RequiredArgsConstructor;
  */
 @RequiredArgsConstructor
 @Getter
-public enum Favour {
-    ARCEUUS("Arceuus", Varbits.KOUREND_FAVOR_ARCEUUS),
-    HOSIDIUS("Hosidius", Varbits.KOUREND_FAVOR_HOSIDIUS),
-    LOVAKENGJ("Lovakengj", Varbits.KOUREND_FAVOR_LOVAKENGJ),
-    PISCARILIUS("Piscarilius", Varbits.KOUREND_FAVOR_PISCARILIUS),
-    SHAYZIEN("Shayzien", Varbits.KOUREND_FAVOR_SHAYZIEN);
+public enum Favour
+{
+	ARCEUUS("Arceuus", Varbits.KOUREND_FAVOR_ARCEUUS),
+	HOSIDIUS("Hosidius", Varbits.KOUREND_FAVOR_HOSIDIUS),
+	LOVAKENGJ("Lovakengj", Varbits.KOUREND_FAVOR_LOVAKENGJ),
+	PISCARILIUS("Piscarilius", Varbits.KOUREND_FAVOR_PISCARILIUS),
+	SHAYZIEN("Shayzien", Varbits.KOUREND_FAVOR_SHAYZIEN);
 
-    private final String name;
-    private final Varbits varbit;
+	private final String name;
+	private final Varbits varbit;
 }

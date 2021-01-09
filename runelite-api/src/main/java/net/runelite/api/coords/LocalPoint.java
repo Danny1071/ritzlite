@@ -26,7 +26,6 @@
 package net.runelite.api.coords;
 
 import javax.annotation.Nullable;
-
 import lombok.Value;
 import net.runelite.api.Client;
 import net.runelite.api.Perspective;
@@ -40,85 +39,94 @@ import net.runelite.api.Perspective;
  * The unit of a LocalPoint is 1/128th of a tile.
  */
 @Value
-public class LocalPoint {
-    /**
-     * X and Y axis coordinates.
-     */
-    private final int x, y;
+public class LocalPoint
+{
+	/**
+	 * X and Y axis coordinates.
+	 */
+	private final int x, y;
 
-    /**
-     * Gets the local coordinate at the center of the passed tile.
-     *
-     * @param client the client
-     * @param world  the passed tile
-     * @return coordinate if the tile is in the current scene, otherwise null
-     */
-    @Nullable
-    public static LocalPoint fromWorld(Client client, WorldPoint world) {
-        if (client.getPlane() != world.getPlane()) {
-            return null;
-        }
-        return fromWorld(client, world.getX(), world.getY());
-    }
+	/**
+	 * Gets the local coordinate at the center of the passed tile.
+	 *
+	 * @param client the client
+	 * @param world  the passed tile
+	 * @return coordinate if the tile is in the current scene, otherwise null
+	 */
+	@Nullable
+	public static LocalPoint fromWorld(Client client, WorldPoint world)
+	{
+		if (client.getPlane() != world.getPlane())
+		{
+			return null;
+		}
+		return fromWorld(client, world.getX(), world.getY());
+	}
 
-    /**
-     * Gets the local coordinate at the center of the passed tile.
-     *
-     * @param client the client
-     * @param x      x-axis coordinate of the tile
-     * @param y      y-axis coordinate of the tile
-     * @return coordinate if the tile is in the current scene, otherwise null
-     */
-    public static LocalPoint fromWorld(Client client, int x, int y) {
-        if (!WorldPoint.isInScene(client, x, y)) {
-            return null;
-        }
+	/**
+	 * Gets the local coordinate at the center of the passed tile.
+	 *
+	 * @param client the client
+	 * @param x      x-axis coordinate of the tile
+	 * @param y      y-axis coordinate of the tile
+	 * @return coordinate if the tile is in the current scene, otherwise null
+	 */
+	public static LocalPoint fromWorld(Client client, int x, int y)
+	{
+		if (!WorldPoint.isInScene(client, x, y))
+		{
+			return null;
+		}
 
-        int baseX = client.getBaseX();
-        int baseY = client.getBaseY();
+		int baseX = client.getBaseX();
+		int baseY = client.getBaseY();
 
-        return fromScene(x - baseX, y - baseY);
-    }
+		return fromScene(x - baseX, y - baseY);
+	}
 
-    /**
-     * Gets the distance between this point and another.
-     *
-     * @param other other point
-     * @return the distance
-     */
-    public int distanceTo(LocalPoint other) {
-        return (int) Math.hypot(getX() - other.getX(), getY() - other.getY());
-    }
+	/**
+	 * Gets the distance between this point and another.
+	 *
+	 * @param other other point
+	 * @return the distance
+	 */
+	public int distanceTo(LocalPoint other)
+	{
+		return (int) Math.hypot(getX() - other.getX(), getY() - other.getY());
+	}
 
-    /**
-     * Gets the coordinate at the center of the passed tile.
-     *
-     * @param x x-axis coordinate of the tile in Scene coords
-     * @param y y-axis coordinate of the tile in Scene coords
-     * @return true coordinate of the tile
-     */
-    public static LocalPoint fromScene(int x, int y) {
-        return new LocalPoint(
-                (x << Perspective.LOCAL_COORD_BITS) + (1 << Perspective.LOCAL_COORD_BITS - 1) - 1,
-                (y << Perspective.LOCAL_COORD_BITS) + (1 << Perspective.LOCAL_COORD_BITS - 1) - 1
-        );
-    }
+	/**
+	 * Gets the coordinate at the center of the passed tile.
+	 *
+	 * @param x      x-axis coordinate of the tile in Scene coords
+	 * @param y      y-axis coordinate of the tile in Scene coords
+	 * @return true coordinate of the tile
+	 */
+	public static LocalPoint fromScene(int x, int y)
+	{
+		return new LocalPoint(
+			(x << Perspective.LOCAL_COORD_BITS) + (1 << Perspective.LOCAL_COORD_BITS - 1) - 1,
+			(y << Perspective.LOCAL_COORD_BITS) + (1 << Perspective.LOCAL_COORD_BITS - 1) - 1
+		);
+	}
 
-    /**
-     * Gets the x-axis coordinate in scene space (tiles).
-     *
-     * @return x-axis coordinate
-     */
-    public int getSceneX() {
-        return x >>> Perspective.LOCAL_COORD_BITS;
-    }
+	/**
+	 * Gets the x-axis coordinate in scene space (tiles).
+	 *
+	 * @return x-axis coordinate
+	 */
+	public int getSceneX()
+	{
+		return x >>> Perspective.LOCAL_COORD_BITS;
+	}
 
-    /**
-     * Gets the y-axis coordinate in scene space (tiles).
-     *
-     * @return y-axis coordinate
-     */
-    public int getSceneY() {
-        return y >>> Perspective.LOCAL_COORD_BITS;
-    }
+	/**
+	 * Gets the y-axis coordinate in scene space (tiles).
+	 *
+	 * @return y-axis coordinate
+	 */
+	public int getSceneY()
+	{
+		return y >>> Perspective.LOCAL_COORD_BITS;
+	}
 }

@@ -31,14 +31,15 @@ import net.runelite.api.Script;
  * A callback from a runelite_callback opcode in a cs2
  */
 @Data
-public class ScriptCallbackEvent {
-    /**
-     * The script that is currently being executed
-     */
-    private Script script;
+public class ScriptCallbackEvent
+{
+	/**
+	 * The script that is currently being executed
+	 */
+	private Script script;
 
-    /**
-     * The name passed to runelite_callback
-     */
-    private String eventName;
+	/**
+	 * The name passed to runelite_callback
+	 */
+	private String eventName;
 }

@@ -28,9 +28,10 @@ import lombok.Value;
 import net.runelite.api.FriendsChatMember;
 
 @Value
-public class FriendsChatMemberJoined {
-    /**
-     * The member that joined
-     */
-    private FriendsChatMember member;
+public class FriendsChatMemberJoined
+{
+	/**
+	 * The member that joined
+	 */
+	private FriendsChatMember member;
 }

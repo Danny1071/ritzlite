@@ -30,17 +30,19 @@ import lombok.Value;
  * A two-dimensional coordinate on the canvas.
  */
 @Value
-public class Point {
-    private final int x;
-    private final int y;
+public class Point
+{
+	private final int x;
+	private final int y;
 
-    /**
-     * Gets the distance between this point and another.
-     *
-     * @param other other point
-     * @return the distance
-     */
-    public int distanceTo(Point other) {
-        return (int) Math.hypot(getX() - other.getX(), getY() - other.getY());
-    }
+	/**
+	 * Gets the distance between this point and another.
+	 *
+	 * @param other other point
+	 * @return the distance
+	 */
+	public int distanceTo(Point other)
+	{
+		return (int) Math.hypot(getX() - other.getX(), getY() - other.getY());
+	}
 }

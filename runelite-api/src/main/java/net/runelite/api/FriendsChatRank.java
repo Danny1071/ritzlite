@@ -26,7 +26,6 @@ package net.runelite.api;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -35,69 +34,73 @@ import lombok.Getter;
  */
 @AllArgsConstructor
 @Getter
-public enum FriendsChatRank {
-    /**
-     * Not ranked.
-     */
-    UNRANKED(-1),
-    /**
-     * Friend rank.
-     */
-    FRIEND(0),
-    /**
-     * Recruit rank.
-     */
-    RECRUIT(1),
-    /**
-     * Corporal rank.
-     */
-    CORPORAL(2),
-    /**
-     * Sergeant rank.
-     */
-    SERGEANT(3),
-    /**
-     * Lieutenant rank.
-     */
-    LIEUTENANT(4),
-    /**
-     * Captain rank.
-     */
-    CAPTAIN(5),
-    /**
-     * General rank.
-     */
-    GENERAL(6),
-    /**
-     * Channel owner rank.
-     */
-    OWNER(7),
-    /**
-     * JMod rank.
-     */
-    JMOD(127);
+public enum FriendsChatRank
+{
+	/**
+	 * Not ranked.
+	 */
+	UNRANKED(-1),
+	/**
+	 * Friend rank.
+	 */
+	FRIEND(0),
+	/**
+	 * Recruit rank.
+	 */
+	RECRUIT(1),
+	/**
+	 * Corporal rank.
+	 */
+	CORPORAL(2),
+	/**
+	 * Sergeant rank.
+	 */
+	SERGEANT(3),
+	/**
+	 * Lieutenant rank.
+	 */
+	LIEUTENANT(4),
+	/**
+	 * Captain rank.
+	 */
+	CAPTAIN(5),
+	/**
+	 * General rank.
+	 */
+	GENERAL(6),
+	/**
+	 * Channel owner rank.
+	 */
+	OWNER(7),
+	/**
+	 * JMod rank.
+	 */
+	JMOD(127);
 
-    private static final Map<Integer, FriendsChatRank> RANKS = new HashMap<>();
+	private static final Map<Integer, FriendsChatRank> RANKS = new HashMap<>();
 
-    static {
-        for (final FriendsChatRank friendsChatRank : FriendsChatRank.values()) {
-            RANKS.put(friendsChatRank.value, friendsChatRank);
-        }
-    }
+	static
+	{
+		for (final FriendsChatRank friendsChatRank : FriendsChatRank.values())
+		{
+			RANKS.put(friendsChatRank.value, friendsChatRank);
+		}
+	}
 
-    /**
-     * Utility method that maps the rank value to its respective
-     * {@link FriendsChatRank} value.
-     *
-     * @param rank the rank value
-     * @return rank type
-     */
-    public static FriendsChatRank valueOf(int rank) {
-        return RANKS.get(rank);
-    }
+	/**
+	 * Utility method that maps the rank value to its respective
+	 * {@link FriendsChatRank} value.
+	 *
+	 * @param rank the rank value
+	 * @return rank type
+	 */
+	public static FriendsChatRank valueOf(int rank)
+	{
+		return RANKS.get(rank);
+	}
 
-    /**
-     * The value of the rank.
-     */
-    private final int value;
+	/**
+	 * The value of the rank.
+	 */
+	private final int value;
 }

@@ -28,19 +28,20 @@ package net.runelite.api.widgets;
 /**
  * Utility class mapping Widget ItemQuantityMode values
  */
-public class ItemQuantityMode {
-    /**
-     * Never show item quantity number
-     */
-    public static final int NEVER = 0;
+public class ItemQuantityMode
+{
+	/**
+	 * Never show item quantity number
+	 */
+	public static final int NEVER = 0;
 
-    /**
-     * Always show item quantity number
-     */
-    public static final int ALWAYS = 1;
+	/**
+	 * Always show item quantity number
+	 */
+	public static final int ALWAYS = 1;
 
-    /**
-     * Only show item quantity number if it's greater than 1
-     */
-    public static final int STACKABLE = 2;
+	/**
+	 * Only show item quantity number if it's greater than 1
+	 */
+	public static final int STACKABLE = 2;
 }

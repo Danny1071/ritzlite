@@ -32,13 +32,15 @@ import net.runelite.api.Player;
  * An event where a {@link Player} has spawned.
  */
 @Value
-public class PlayerSpawned {
-    /**
-     * The spawned player.
-     */
-    private final Player player;
+public class PlayerSpawned
+{
+	/**
+	 * The spawned player.
+	 */
+	private final Player player;
 
-    public Actor getActor() {
-        return player;
-    }
+	public Actor getActor()
+	{
+		return player;
+	}
 }

@@ -34,5 +34,6 @@ import net.runelite.api.Client;
  * @see Client#getWorld()
  * @see Client#getWorldType()
  */
-public class WorldChanged {
+public class WorldChanged
+{
 }

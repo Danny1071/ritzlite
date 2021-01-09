@@ -42,13 +42,14 @@ import net.runelite.api.GrandExchangeOfferState;
  * can change into.
  */
 @Data
-public class GrandExchangeOfferChanged {
-    /**
-     * The offer that has been modified.
-     */
-    private GrandExchangeOffer offer;
-    /**
-     * The index value of the slot.
-     */
-    private int slot;
+public class GrandExchangeOfferChanged
+{
+	/**
+	 * The offer that has been modified.
+	 */
+	private GrandExchangeOffer offer;
+	/**
+	 * The index value of the slot.
+	 */
+	private int slot;
 }

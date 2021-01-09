@@ -33,5 +33,6 @@ import java.lang.annotation.RetentionPolicy;
  */
 @Documented
 @Retention(RetentionPolicy.SOURCE)
-public @interface VisibleForDevtools {
+public @interface VisibleForDevtools
+{
 }

@@ -31,20 +31,22 @@ import lombok.Data;
  * An event where the Grand Exchange has been searched.
  */
 @Data
-public class GrandExchangeSearched {
-    /**
-     * Whether or not the event has been consumed by a subscriber.
-     */
-    private boolean consumed;
+public class GrandExchangeSearched
+{
+	/**
+	 * Whether or not the event has been consumed by a subscriber.
+	 */
+	private boolean consumed;
 
-    /**
-     * Marks the event as having been consumed.
-     * <p>
-     * Setting this state indicates that a plugin has set the GE
-     * search results and that the event will not be passed on
-     * for handling by vanilla client code.
-     */
-    public void consume() {
-        this.consumed = true;
-    }
+	/**
+	 * Marks the event as having been consumed.
+	 * <p>
+	 * Setting this state indicates that a plugin has set the GE
+	 * search results and that the event will not be passed on
+	 * for handling by vanilla client code.
+	 */
+	public void consume()
+	{
+		this.consumed = true;
+	}
 }

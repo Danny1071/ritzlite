@@ -44,5 +44,6 @@ import lombok.Data;
  * click menus, are independent of the game tick.
  */
 @Data
-public class GameTick {
+public class GameTick
+{
 }

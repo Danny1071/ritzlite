@@ -39,14 +39,15 @@ import net.runelite.api.ItemContainer;
  * </ul>
  */
 @Value
-public class ItemContainerChanged {
-    /**
-     * The modified container's ID.
-     */
-    private final int containerId;
+public class ItemContainerChanged
+{
+	/**
+	 * The modified container's ID.
+	 */
+	private final int containerId;
 
-    /**
-     * The modified item container.
-     */
-    private final ItemContainer itemContainer;
+	/**
+	 * The modified item container.
+	 */
+	private final ItemContainer itemContainer;
 }

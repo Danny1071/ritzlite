@@ -51,5 +51,6 @@ public class ConfigServiceTest
 		assertTrue(ConfigService.validateJson("\"petoptions\""));
 		assertTrue(ConfigService.validateJson("key:value"));
 		assertTrue(ConfigService.validateJson("{\"key\": \"value\"}"));
+		assertTrue(ConfigService.validateJson("\n"));
 	}
 }
